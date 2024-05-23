@@ -1,0 +1,4 @@
+django[bcrypt]<5  # https://docs.djangoproject.com/en/3.2/topics/auth/passwords/#using-bcrypt-with-django
+django-allauth
+ipython
+django-extensions

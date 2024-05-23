@@ -1,0 +1,12 @@
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: compose/Dockerfile
+      target: local
+    volumes:
+      # We only mount source code in development:
+      - ..:/app
+    shm_size: 128m
+    ports:
+      - "8000:8000"

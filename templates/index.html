@@ -1,0 +1,25 @@
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Website</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <main>
+        <h1>Demonstrate issue how Django discovers translations</h1>
+
+        So we have string 'Continue' which should be translated as 'Weiter' according our `locale/de/LC_MESSAGES/django.po` file which has compiled version
+        `locale/de/LC_MESSAGES/django.mo` in the same directory.
+
+        Below the string 'Continue' should be translated to 'Weiter' but it is not. It is still 'Fortfahren' from 3rd party library `django-allauth@0.63.1` which you can see
+        <a href="https://github.com/pennersr/django-allauth/blob/51ae70ed448b3d86853ea3dd984822e9d6c5d15f/allauth/locale/de/LC_MESSAGES/django.po#L1331">here</a>
+        <p>Continue => {% translate 'Continue' %}</p>
+    </main>
+  </body>
+</html>
